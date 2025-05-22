@@ -1,0 +1,212 @@
+/* Admin Navigation - Job Application System */
+.admin-sidebar-nav {
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+}
+
+.admin-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Main nav items */
+.admin-nav-item {
+  position: relative;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  margin: 6px 10px;
+}
+
+.admin-nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.admin-nav-item.active {
+  background-color: rgba(var(--primary-rgb, 96, 165, 250), 0.2);
+}
+
+.admin-nav-link {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  color: var(--text-color, #f8f9fa);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+.admin-nav-item.active > .admin-nav-link {
+  color: var(--primary-color, #c2d2dc);
+  font-weight: 500;
+}
+
+.admin-nav-link i:first-child {
+  min-width: 24px;
+  font-size: 16px;
+  margin-right: 10px;
+  text-align: center;
+}
+
+.admin-nav-text {
+  flex-grow: 1;
+  font-size: 14px;
+  font-weight: 400;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Submenu icon */
+.admin-submenu-icon {
+  font-size: 12px;
+  transition: transform 0.3s ease, color 0.2s ease;
+  margin-left: 5px;
+}
+
+.admin-nav-item.open .admin-submenu-icon {
+  transform: rotate(180deg);
+  color: var(--primary-color, #60a5fa);
+}
+
+/* Submenu styling */
+.admin-submenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+  margin-left: 10px;
+  list-style: none;
+  padding-left: 24px;
+  border-left: 1px dashed rgba(255, 255, 255, 0.2);
+}
+
+.admin-nav-item.open .admin-submenu {
+  max-height: 500px; /* This will be overridden by JS with the actual height */
+}
+
+.admin-submenu li {
+  margin: 5px 0;
+}
+
+.admin-submenu-link {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+}
+
+.admin-submenu-link:hover {
+  color: var(--primary-color, #60a5fa);
+  background-color: rgba(255, 255, 255, 0.05);
+  padding-left: 18px;
+}
+
+.admin-submenu-link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0;
+  height: 1px;
+  background-color: var(--primary-color, #60a5fa);
+  transition: width 0.3s ease;
+  transform: translateY(-50%);
+}
+
+.admin-submenu-link:hover::before {
+  width: 10px;
+}
+
+.admin-submenu-link.active {
+  color: var(--primary-color, #60a5fa);
+  background-color: rgba(var(--primary-rgb, 96, 165, 250), 0.1);
+  font-weight: 500;
+}
+
+/* Category dividers */
+.admin-nav-category {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 20px 18px 10px;
+  font-weight: 600;
+}
+
+/* Badge for notifications or counts */
+.admin-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 6px;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 10px;
+  background-color: var(--accent-color, #f43f5e);
+  color: white;
+  margin-left: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.admin-nav-link:hover .admin-badge,
+.admin-submenu-link:hover .admin-badge {
+  transform: scale(1.1);
+  background-color: var(--accent-color-hover, #e11d48);
+}
+
+/* Collapsed state (for responsive design) */
+.sidebar-collapsed .admin-nav-text,
+.sidebar-collapsed .admin-submenu-icon {
+  display: none;
+}
+
+.sidebar-collapsed .admin-nav-item:hover .admin-nav-text {
+  display: block;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  background-color: var(--sidebar-bg, #1e293b);
+  padding: 12px 15px;
+  border-radius: 0 8px 8px 0;
+  min-width: 150px;
+  z-index: 1000;
+  box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Enhanced visual cues */
+.admin-nav-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background-color: var(--primary-color, #60a5fa);
+  border-radius: 0 4px 4px 0;
+  transform: scaleY(0);
+  transition: transform 0.2s ease;
+}
+
+.admin-nav-item.active::before {
+  transform: scaleY(1);
+}
+
+/* Animations for hover effects */
+@keyframes pulseHighlight {
+  0% { background-color: rgba(var(--primary-rgb, 96, 165, 250), 0.1); }
+  50% { background-color: rgba(var(--primary-rgb, 96, 165, 250), 0.2); }
+  100% { background-color: rgba(var(--primary-rgb, 96, 165, 250), 0.1); }
+}
+
+.admin-nav-item.active:hover {
+  animation: pulseHighlight 1.5s infinite;
+}

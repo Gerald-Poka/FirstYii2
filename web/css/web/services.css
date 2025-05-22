@@ -1,0 +1,199 @@
+/* Services Page Styles - Uniquely scoped to avoid conflicts */
+#services.services-section {
+    padding: 100px 0 80px;
+    background-color: #f9f9f9;
+}
+
+#services .services-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+#services .services-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 20px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#services .title-divider {
+    height: 4px;
+    width: 80px;
+    background: linear-gradient(to right, #4CAF50, #2E7D32);
+    margin: 0 auto 30px;
+    border-radius: 2px;
+}
+
+/* Service Card Styling */
+#services .service-card {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 40px 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.07);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#services .service-card:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, #4CAF50, #2E7D32);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+#services .service-card:hover:before {
+    transform: scaleX(1);
+}
+
+#services .service-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+#services .service-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+    border-radius: 50%;
+    margin-bottom: 25px;
+    color: #fff;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 20px rgba(46, 125, 50, 0.3);
+}
+
+#services .service-icon i {
+    font-size: 34px;
+    transition: all 0.4s ease;
+}
+
+#services .service-card:hover .service-icon {
+    transform: rotateY(180deg);
+}
+
+#services .service-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#services .service-card p {
+    color: #666;
+    margin-bottom: 25px;
+    line-height: 1.7;
+}
+
+/* Service Features */
+#services .service-features {
+    margin-top: auto;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+#services .service-feature-item {
+    margin-bottom: 12px;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+#services .service-feature-item i {
+    color: #4CAF50;
+    margin-right: 10px;
+}
+
+/* Button styling */
+#services .btn-service {
+    display: inline-block;
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+    color: #fff;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(46, 125, 50, 0.3);
+}
+
+#services .btn-service:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(46, 125, 50, 0.4);
+    color: #fff;
+}
+
+/* Featured card */
+#services .service-card.featured {
+    border: 2px solid rgba(76, 175, 80, 0.3);
+    transform: scale(1.03);
+}
+
+#services .service-card.featured:hover {
+    transform: scale(1.03) translateY(-12px);
+}
+
+#services .popular-tag {
+    position: absolute;
+    top: 15px;
+    right: -35px;
+    background: #FF9800;
+    color: white;
+    padding: 5px 40px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transform: rotate(45deg);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    #services.services-section {
+        padding: 70px 0 50px;
+    }
+    
+    #services .services-title {
+        font-size: 2.4rem;
+    }
+    
+    #services .service-card {
+        padding: 30px 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    #services.services-section {
+        padding: 50px 0 30px;
+    }
+    
+    #services .services-title {
+        font-size: 2rem;
+    }
+    
+    #services .services-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    #services .service-card.featured {
+        transform: none;
+    }
+    
+    #services .service-card.featured:hover {
+        transform: translateY(-12px);
+    }
+}

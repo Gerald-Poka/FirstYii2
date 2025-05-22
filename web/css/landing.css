@@ -1,0 +1,215 @@
+/* Google Fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Base styles */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body.landing-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Use viewport height instead of percentage */
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Ensure the body flex container works properly */
+#main {
+    flex: 1 0 auto; /* 1 = grow, 0 = no shrink, auto = base size */
+}
+
+/* Header styles */
+.landing-header {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.landing-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-logo img {
+    height: 40px;
+    width: auto;
+}
+
+.brand-logo span {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-outline-primary.login-btn {
+    color: #4a4e69;
+    border-color: #4a4e69;
+}
+
+.btn-outline-primary.login-btn:hover {
+    background-color: #f0f2ff;
+}
+
+.btn-primary.register-btn {
+    background-color: #4a4e69;
+    border-color: #4a4e69;
+}
+
+.btn-primary.register-btn:hover {
+    background-color: #3d4159;
+}
+
+/* Hero section */
+.landing-hero {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #fff 0%, #f0f2ff 100%);
+}
+
+.landing-hero h1 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: #22223b;
+    margin-bottom: 20px;
+}
+
+.landing-hero .highlight {
+    color: #4a4e69;
+}
+
+.landing-hero p.lead {
+    font-size: 1.25rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.hero-action-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+}
+
+/* Features section */
+.landing-features {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #22223b;
+}
+
+.feature-item {
+    padding: 30px 20px;
+    text-align: center;
+    transition: all 0.3s;
+    border-radius: 10px;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    color: #4a4e69;
+    margin-bottom: 20px;
+}
+
+.feature-item h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.feature-item p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Footer styling */
+.landing-footer {
+    background-color: #22223b;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.landing-footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Prevent footer from shrinking */
+footer {
+    flex-shrink: 0; /* Prevent footer from shrinking */
+}
+
+/* Mobile-specific fixes */
+@media (max-width: 576px) {
+    /* Fix any potential overflow issues */
+    body.landing-page {
+        overflow-x: hidden;
+    }
+    
+    /* Ensure content has enough padding at the bottom */
+    #main {
+        padding-bottom: 20px;
+    }
+    
+    /* Make footer position relative instead of fixed if it's fixed */
+    footer {
+        position: relative !important;
+        width: 100%;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .landing-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-action-buttons {
+        flex-direction: column;
+    }
+    
+    .landing-footer .footer-content {
+        flex-direction: column;
+    }
+    
+    .landing-footer .footer-right {
+        margin-top: 15px;
+    }
+}

@@ -1,0 +1,392 @@
+/*--------------------------------------------------------------
+# Footer - Positioned at Bottom - Fixed Solution
+--------------------------------------------------------------*/
+html {
+    height: 100%; /* Required for proper sticky footer */
+}
+
+body {
+    min-height: 100%; /* Use minimum height of viewport */
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+/* All content except footer should expand to push footer down */
+.landing-wrapper,
+.main-content-wrapper,
+main,
+.content {
+    flex: 1 0 auto; /* This will make content area expand */
+}
+
+/* Footer should never flex or grow */
+#main-footer {
+    flex-shrink: 0; /* Prevents footer from shrinking */
+    width: 100%;
+    background: #0d2d4a;
+    color: #fff;
+    position: relative; /* Changed from fixed */
+    z-index: 10;
+    margin-top: auto; /* This is the key - pushes footer to bottom */
+}
+
+/* Fix for mobile Safari */
+@supports (-webkit-touch-callout: none) {
+    body {
+        min-height: -webkit-fill-available;
+    }
+}
+
+/*--------------------------------------------------------------
+# Footer - Positioned at Bottom
+--------------------------------------------------------------*/
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Full viewport height */
+}
+
+.landing-wrapper {
+    flex: 1 0 auto; /* This will make it take up available space, pushing footer down */
+}
+
+#main-footer {
+    background: #0d2d4a; /* Darker background for footer */
+    color: #fff;
+    font-size: 14px;
+    padding: 0;
+    margin-top: 60px;
+    flex-shrink: 0; /* Prevents footer from shrinking */
+}
+
+.footer-top {
+    background: #0277bd url('../../../web/images/footer-bg.png') center bottom no-repeat; /* Add a subtle background pattern */
+    background-size: cover;
+    padding: 60px 0 30px 0;
+    position: relative;
+}
+
+.footer-top::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(13, 45, 74, 0.9); /* Dark blue overlay */
+}
+
+.footer-top .container {
+    position: relative;
+}
+
+.footer-info {
+    margin-bottom: 30px;
+}
+
+.footer-logo {
+    margin-bottom: 15px;
+}
+
+.footer-logo img {
+    max-height: 50px;
+    margin-bottom: 10px;
+    filter: brightness(0) invert(1); /* Make logo white */
+}
+
+.footer-info p {
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 0;
+}
+
+.social-links {
+    margin-top: 20px;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    margin-right: 10px;
+    color: #fff;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+/* Brand colors for social icons */
+.social-links a .fa-facebook-f { color: #1877f3; }
+.social-links a .fa-twitter { color: #1da1f2; }
+.social-links a .fa-linkedin-in { color: #0077b5; }
+.social-links a .fa-instagram { 
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Hover effect - keep brand colors on hover */
+.social-links a:hover .fa-facebook-f { color: #1877f3; }
+.social-links a:hover .fa-twitter { color: #1da1f2; }
+.social-links a:hover .fa-linkedin-in { color: #0077b5; }
+.social-links a:hover .fa-instagram {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.footer-links {
+    margin-bottom: 30px;
+}
+
+.footer-links h4 {
+    font-size: 18px;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.footer-links h4:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 50px;
+    background: #0288d1;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links ul li {
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+}
+
+.footer-links ul li:first-child {
+    padding-top: 0;
+}
+
+.footer-links ul li i {
+    font-size: 10px;
+    padding-right: 5px;
+    color: #0288d1;
+    line-height: 1;
+}
+
+.footer-links ul li a {
+    color: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+    display: inline-block;
+    line-height: 1;
+    text-decoration: none;
+}
+
+.footer-links ul li a:hover {
+    color: #fff;
+    padding-left: 5px;
+}
+
+.footer-contact {
+    margin-bottom: 30px;
+}
+
+.footer-contact h4 {
+    font-size: 18px;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.footer-contact h4:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 50px;
+    background: #0288d1;
+}
+
+.footer-contact p {
+    line-height: 26px;
+}
+
+.footer-contact p i {
+    color: #0288d1;
+    margin-right: 10px;
+    font-size: 16px;
+    width: 16px;
+    text-align: center;
+}
+
+/* Colors for contact icons */
+.footer-contact .fas.fa-map-marker-alt { color: #e74c3c; }
+.footer-contact .fab.fa-whatsapp { color: #25D366; }
+.footer-contact .fas.fa-envelope { color: #e67e22; }
+
+.footer-contact p a {
+    color: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.footer-contact p a:hover {
+    color: #fff;
+}
+
+.footer-newsletter {
+    margin-top: 30px;
+}
+
+.footer-newsletter h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.footer-newsletter form {
+    position: relative;
+    margin-top: 10px;
+}
+
+.footer-newsletter input[type="email"] {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 15px;
+    color: #fff;
+    border-radius: 50px;
+    width: 100%;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.footer-newsletter input[type="email"]:focus {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.footer-newsletter input[type="email"]::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-newsletter button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border: 0;
+    padding: 0 15px;
+    background: #0288d1;
+    color: #fff;
+    transition: all 0.3s ease;
+    border-radius: 0 50px 50px 0;
+    cursor: pointer;
+    outline: none;
+}
+
+.footer-newsletter button:hover {
+    background: #039be5;
+}
+
+.footer-bottom {
+    background: #051b30; /* Even darker background for bottom footer */
+    padding: 20px 0;
+    font-size: 13px;
+    text-align: center;
+}
+
+.copyright {
+    text-align: left;
+    margin-bottom: 0;
+}
+
+.credits {
+    text-align: right;
+}
+
+.credits i {
+    color: #f44336;
+    margin: 0 3px;
+}
+
+/* Style for credits with link */
+.credits a {
+    color: #0277bd;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.credits a:hover {
+    color: #03a9f4;
+    text-decoration: underline;
+}
+
+/* Modern footer positioning that works on all screen sizes */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#main {
+  flex: 1 0 auto; /* This makes the content area grow */
+}
+
+#main-footer {
+  flex-shrink: 0; /* Prevent footer from shrinking */
+  width: 100%;
+  position: relative;
+  z-index: 10;
+}
+
+/* Mobile-specific fixes */
+@media (max-width: 576px) {
+  /* Add padding to bottom of content to prevent footer overlap */
+  #main {
+    padding-bottom: 20px;
+  }
+  
+  /* Ensure content containers have proper spacing */
+  .container {
+    padding-bottom: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+    .footer-top {
+        padding: 40px 0 20px 0;
+    }
+    
+    .copyright,
+    .credits {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+}

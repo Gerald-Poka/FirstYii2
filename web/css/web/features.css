@@ -1,0 +1,171 @@
+/* Fix the container selector */
+#features.landing-features {
+    padding: 100px 0;
+    background: linear-gradient(to bottom, #f9f9f9, #f0f0f0);
+}
+
+#features .section-title {
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 2.5rem;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 15px;
+    color: #333;
+    letter-spacing: 0.5px;
+}
+
+#features .section-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(to right, #4CAF50, #2E7D32);
+    border-radius: 2px;
+    transform: translateX(-50%);
+}
+
+/* Enhanced card styling */
+#features .feature-item {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-align: center;
+    padding: 40px 25px;
+    transition: all 0.4s ease;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.07);
+    border-bottom: 3px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+#features .feature-item:hover {
+    transform: translateY(-10px);
+    border-bottom: 3px solid #4CAF50;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+#features .feature-item:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, #4CAF50, #2E7D32);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+#features .feature-item:hover:before {
+    transform: scaleX(1);
+}
+
+#features .feature-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 90px;
+    background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+    border-radius: 50%;
+    margin: 0 auto 25px;
+    color: #fff;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 20px rgba(46, 125, 50, 0.3);
+}
+
+#features .feature-icon i {
+    font-size: 36px;
+    transition: all 0.4s ease;
+}
+
+#features .feature-item:hover .feature-icon {
+    transform: rotateY(180deg);
+}
+
+#features .feature-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#features .feature-item h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+    color: #222;
+}
+
+#features .feature-item p {
+    color: #555;
+    line-height: 1.7;
+    font-size: 1.05rem;
+    flex: 1;
+}
+
+/* Add proper row spacing */
+#features .row {
+    margin-bottom: 30px;
+}
+
+/* Add this to ensure columns have proper spacing */
+#features .col-md-4 {
+    padding: 15px;
+    margin-bottom: 30px;
+}
+
+/* Better responsive handling */
+@media (max-width: 768px) {
+    #features.landing-features {
+        padding: 50px 0;
+    }
+    
+    #features .col-md-4 {
+        padding: 10px 15px;
+    }
+    
+    #features .feature-item {
+        height: auto;
+    }
+}
+
+/* Add to features.css */
+@media (max-width: 576px) {
+    #features.landing-features {
+        padding: 40px 0;
+    }
+    
+    #features .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+    
+    #features .feature-item {
+        margin-bottom: 20px;
+        padding: 20px 15px;
+    }
+    
+    #features .feature-icon {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 15px;
+    }
+    
+    #features .feature-icon i {
+        font-size: 28px;
+    }
+    
+    #features .feature-item h3 {
+        font-size: 1.3rem;
+    }
+    
+    #features .feature-item p {
+        font-size: 0.95rem;
+    }
+}

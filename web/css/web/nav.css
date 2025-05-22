@@ -1,0 +1,313 @@
+/* Main Navigation Styling with Increased Height */
+#main-navigation {
+    background-color: #ffffff;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 900;
+    margin-top: 90px; 
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 8px;
+    min-height: 60px;
+    position: relative; /* Add this for proper stacking context */
+}
+
+/* Navigation menu styling */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.nav-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.nav-item a {
+    color: #333;
+    display: flex;
+    align-items: center;
+    padding: 18px 22px; 
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem; 
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.nav-item i {
+    margin-right: 8px;
+    color: #0277bd;
+    font-size: 1.1rem; 
+}
+
+.nav-item.active a {
+    color: #0277bd;
+    background-color: transparent; 
+    border-bottom: 3px solid #0277bd;
+    font-weight: 600; 
+}
+
+/* Dropdown menu */
+.nav-item.has-dropdown {
+    position: relative;
+}
+
+.dropdown-indicator {
+    font-size: 0.8rem;
+    margin-left: 5px;
+    transition: transform 0.3s;
+}
+
+.nav-item.has-dropdown:hover .dropdown-indicator {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    border-radius: 0 0 4px 4px;
+    overflow: hidden;
+    list-style: none;
+    padding: 8px 0; /* Add some padding to dropdown */
+}
+
+.nav-item.has-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dropdown-menu li:last-child {
+    border-bottom: none;
+}
+
+.dropdown-menu a {
+    padding: 14px 20px; /* Increased padding in dropdown items */
+    display: block;
+    font-size: 0.95rem;
+    color: #444;
+    transition: all 0.2s;
+}
+
+.dropdown-menu a:hover {
+    background-color: rgba(2, 119, 189, 0.05);
+    padding-left: 22px;
+}
+
+/* Search form - taller to match navigation height */
+.nav-search {
+    position: relative;
+}
+
+.nav-search input {
+    border: 1px solid #e0e0e0;
+    border-radius: 30px;
+    padding: 12px 20px; /* Increased padding */
+    padding-right: 45px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.3s;
+    width: 220px;
+    background-color: #f5f5f5;
+    height: 45px; /* Set explicit height */
+}
+
+.nav-search input:focus {
+    width: 250px;
+    border-color: #0277bd;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(2, 119, 189, 0.1);
+}
+
+.nav-search button {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    bottom: 5px;
+    border: none;
+    background: transparent;
+    color: #0277bd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+/* Mobile navigation toggle - larger for better tap target */
+.mobile-nav-toggle {
+    display: none;
+    background-color: rgba(2, 119, 189, 0.1);
+    border: none;
+    color: #0277bd;
+    font-size: 1.6rem;
+    cursor: pointer;
+    padding: 10px;
+    height: 45px;
+    width: 45px;
+    border-radius: 4px;
+}
+
+/* Enhanced Mobile Navigation */
+@media (max-width: 992px) {
+    /* Make mobile toggle button visible */
+    .mobile-nav-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto; /* Push to right if needed */
+        order: 2; /* Ensure correct ordering in flex container */
+        position: relative;
+        z-index: 1001;
+    }
+    
+    /* Container adjustments */
+    .nav-container {
+        padding: 10px 15px;
+        justify-content: space-between;
+        gap: 10px;
+    }
+    
+    /* Full-width overlay menu - Fixed position */
+    .nav-menu {
+        position: absolute; /* Change from fixed to absolute */
+        top: 100%; /* Position right below the navigation bar */
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        flex-direction: column;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        height: auto; /* Override the 100% height */
+        max-height: 0;
+        overflow-y: auto;
+        transition: all 0.4s ease;
+        visibility: hidden;
+        opacity: 0;
+        z-index: 1000;
+        padding: 0;
+        transform: translateY(-10px);
+    }
+    
+    /* When menu is active */
+    .nav-menu.active {
+        max-height: 80vh; /* Use viewport height instead of calculation */
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+        padding: 20px 0;
+    }
+    
+    /* Item styling for mobile */
+    .nav-item {
+        width: 100%;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .nav-item:last-child {
+        border-bottom: none;
+    }
+    
+    .nav-item a {
+        padding: 15px 20px;
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    /* Active item styling */
+    .nav-item.active a {
+        border-bottom: none;
+        border-left: 3px solid #0277bd;
+        padding-left: 17px;
+    }
+    
+    /* Dropdown for mobile */
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        max-height: 0;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        transition: max-height 0.3s ease;
+        overflow: hidden;
+        background-color: #f5f5f5;
+        width: 100%;
+    }
+    
+    .nav-item.has-dropdown.active .dropdown-menu {
+        max-height: 300px;
+        padding: 0;
+    }
+    
+    .dropdown-menu a {
+        padding-left: 40px;
+    }
+    
+    /* Search repositioning */
+    .nav-search {
+        width: 100%;
+        order: -1;
+        margin-bottom: 15px;
+    }
+}
+
+/* Animation for mobile menu toggle */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.nav-menu.active .nav-item {
+    animation: fadeIn 0.3s ease forwards;
+    animation-delay: calc(0.1s * var(--item-order));
+    opacity: 0;
+}
+
+/* Add a subtle hover effect for all nav items */
+.nav-item a:hover {
+    background-color: transparent; /* Remove background on hover as well */
+    color: #0277bd;
+}
+
+/* Optional: Add a slightly enhanced hover effect */
+.nav-item:hover {
+    transform: translateY(-1px);
+    transition: transform 0.2s ease;
+}
+
+/* Add this to your nav.css file */
+@media (max-width: 992px) {
+    /* Additional fix for dropdown menus */
+    .nav-item.has-dropdown > a {
+        position: relative;
+    }
+    
+    .nav-item.has-dropdown.active .dropdown-menu {
+        display: block;
+        max-height: 500px;
+        padding: 10px 0;
+    }
+}

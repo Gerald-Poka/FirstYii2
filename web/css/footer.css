@@ -1,0 +1,123 @@
+/* Footer styling - compact fixed footer */
+#footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, rgba(42, 43, 64, 0.98) 0%, rgba(74, 78, 105, 0.96) 100%);
+    color: #fff;
+    padding: 12px 0; /* Reduced from 20px to 12px */
+    font-family: 'Inter', sans-serif;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 99;
+    transition: left 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* When sidebar is present, adjust left margin */
+body:not(.sidebar-collapsed) #footer {
+    left: 260px;
+    width: calc(100% - 260px);
+}
+
+body.sidebar-collapsed #footer {
+    left: 70px;
+    width: calc(100% - 70px);
+}
+
+/* Add padding to main content to prevent content from being hidden behind footer */
+#main {
+    padding-bottom: 60px !important; /* Reduced from 80px to 60px */
+}
+
+/* Footer content styling */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.footer-left, .footer-right {
+    padding: 5px 0; /* Reduced from 10px to 5px */
+    display: flex;
+    align-items: center;
+}
+
+.footer-brand {
+    font-size: 15px; /* Reduced from 18px */
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    color: #fff;
+    margin-bottom: 0; /* Removed bottom margin */
+    margin-right: 12px;
+}
+
+.copyright {
+    font-size: 11px; /* Reduced from 13px */
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-credit {
+    font-size: 12px; /* Reduced from 14px */
+    color: rgba(255, 255, 255, 0.8);
+    letter-spacing: 0.3px;
+    position: relative;
+    padding-left: 15px; /* Reduced from 20px */
+    line-height: 1.2;
+}
+
+.footer-credit::before {
+    content: '❖';
+    position: absolute;
+    left: 0;
+    color: rgba(94, 96, 206, 0.8);
+    font-size: 10px; /* Added size control */
+}
+
+/* Version info - small text addition */
+.version-info {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.4);
+    margin-left: 12px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-credit {
+        padding-left: 0;
+        margin-top: 10px;
+    }
+    
+    .footer-credit::before {
+        display: none;
+    }
+    
+    body:not(.sidebar-collapsed) #footer,
+    body.sidebar-collapsed #footer {
+        left: 0;
+        width: 100%;
+    }
+}
+
+/* Print styles */
+@media print {
+    #footer {
+        background: #fff !important;
+        color: #333 !important;
+        border-top: 1px solid #ddd;
+    }
+    
+    .copyright, .footer-credit {
+        color: #555 !important;
+    }
+}

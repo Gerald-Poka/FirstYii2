@@ -1,0 +1,183 @@
+/* Root color variables for consistency */
+:root {
+  --primary-color: #0192af;
+  --primary-dark: #017792;
+  --success-color: #06d6a0;
+  --danger-color: #ef476f;
+  --background-light: #f8fafc;
+  --card-bg: #fff;
+  --border-color: #e2e8f0;
+  --text-primary: #334155;
+  --text-muted: #94a3b8;
+}
+
+/* Card header with gradient */
+.card-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)) !important;
+    color: #fff !important;
+    border-bottom: none !important;
+    border-radius: 1rem 1rem 0 0;
+    padding: 1.5rem 2rem !important;
+    box-shadow: 0 4px 16px rgba(1,146,175,0.08);
+}
+
+.card-header .h3 {
+    color: #fff !important;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.card-header .bi {
+    font-size: 2rem;
+    vertical-align: middle;
+    margin-right: 0.5rem;
+}
+
+.card-header p {
+    color: #e0f7fa !important;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+/* Card body */
+.card-body {
+    background: var(--background-light);
+    border-radius: 0 0 1rem 1rem;
+    padding: 2rem 2rem 1.5rem 2rem;
+}
+
+/* Form section styling */
+.form-section {
+    background: var(--card-bg);
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 4px rgba(1,146,175,0.04);
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    margin-bottom: 2rem;
+    border: 1px solid var(--border-color);
+    transition: box-shadow 0.2s;
+}
+
+.form-section:hover {
+    box-shadow: 0 4px 16px rgba(1,146,175,0.10);
+}
+
+.form-section-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.form-section-title .bi {
+    font-size: 1.3rem;
+    margin-right: 0.5rem;
+}
+
+.form-section-title::after {
+    content: '';
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-dark));
+    margin-left: 1rem;
+    opacity: 0.15;
+    border-radius: 1px;
+}
+
+.form-section:last-of-type {
+    margin-bottom: 0;
+}
+
+/* Form fields */
+.job-form .form-label,
+.job-form .col-form-label {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.job-form .form-control,
+.job-form .form-select {
+    border-radius: 0.5rem;
+    border: 1px solid var(--border-color);
+    box-shadow: none;
+    transition: border-color 0.2s;
+}
+
+.job-form .form-control:focus,
+.job-form .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(1,146,175,0.08);
+}
+
+.job-form .form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.job-form .form-check-label {
+    color: var(--text-primary);
+    font-weight: 400;
+}
+
+.job-form .form-check {
+    margin-bottom: 0.5rem;
+}
+
+/* Form actions */
+.form-actions {
+    margin-top: 2rem;
+}
+
+.btn-save {
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-dark));
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    padding: 0.6rem 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(1,146,175,0.12);
+    transition: background 0.2s, box-shadow 0.2s;
+}
+
+.btn-save:hover {
+    background: linear-gradient(90deg, var(--primary-dark), var(--primary-color));
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(1,146,175,0.18);
+}
+
+.btn-outline-secondary {
+    border-radius: 0.5rem;
+    font-weight: 500;
+    padding: 0.6rem 1.5rem;
+    margin-left: 0.5rem;
+    transition: background 0.2s, color 0.2s;
+}
+
+.btn-outline-secondary:hover {
+    background: var(--border-color);
+    color: var(--primary-color);
+}
+
+/* Responsive tweaks */
+@media (max-width: 992px) {
+    .card-header, .card-body {
+        padding: 1rem !important;
+    }
+    .form-section {
+        padding: 1.2rem 0.7rem 1rem 0.7rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .card-header, .card-body {
+        padding: 0.5rem !important;
+    }
+    .form-section {
+        padding: 0.7rem 0.2rem 0.5rem 0.2rem;
+    }
+    .btn-save, .btn-outline-secondary {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}

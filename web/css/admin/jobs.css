@@ -1,0 +1,279 @@
+/* Job Management Styles - Using your #0192af color scheme */
+
+:root {
+  /* Color palette with #0192af as primary blue */
+  --primary-color: #0192af;
+  --primary-light: #33adc5;
+  --primary-dark: #017792;
+  --secondary-color: #5f6caf;
+  --success-color: #06d6a0;
+  --warning-color: #ffd166;
+  --danger-color: #ef476f;
+  --info-color: #9dd2e9;
+  
+  /* Neutral palette */
+  --background-light: #f8fafc;
+  --card-bg: #ffffff;
+  --border-color: #e2e8f0;
+  --text-primary: #334155;
+  --text-secondary: #64748b;
+  --text-muted: #94a3b8;
+}
+
+/* Card header with gradient */
+.card-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)) !important;
+    color: #fff !important;
+    border-bottom: none !important;
+    box-shadow: 0 4px 16px rgba(1,146,175,0.08);
+    border-radius: 1rem 1rem 0 0;
+    padding: 1.5rem 2rem !important;
+    position: relative;
+}
+
+.card-header .h3 {
+    color: #fff !important;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+}
+
+.card-header .bi {
+    font-size: 2rem;
+    vertical-align: middle;
+    margin-right: 0.5rem;
+}
+
+.card-header p {
+    color: #e0f7fa !important;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+/* Card body */
+.card-body {
+    background: var(--background-light);
+    border-radius: 0 0 1rem 1rem;
+    padding: 2rem 2rem 1.5rem 2rem;
+}
+
+/* Form section styling */
+.form-section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #e2e8f0;
+}
+
+.form-section:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.form-section-title {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #edf2f7;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.form-section-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(to right, var(--primary-color), var(--primary-light));
+}
+
+/* Table styles */
+.table {
+    background: #fff;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(1,146,175,0.05);
+}
+
+.table thead th {
+    background: var(--primary-light);
+    color: #fff;
+    border: none;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: #f3fbfd;
+}
+
+.table-hover > tbody > tr:hover {
+    background-color: #e6f7fb;
+    transition: background 0.2s;
+}
+
+/* Job icon in list */
+.job-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 2px 8px rgba(1,146,175,0.10);
+    margin-right: 1rem;
+}
+
+/* Job info styles */
+.job-info h6 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.15rem;
+}
+
+.job-info .badge {
+    font-size: 0.85rem;
+    padding: 0.4em 0.8em;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    margin-right: 0.5rem;
+}
+
+.job-info small {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.summary-info {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+}
+
+/* Form actions */
+.form-actions {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px dashed #e2e8f0;
+}
+
+/* Submit button */
+.btn-primary {
+    background: var(--primary-color);
+    border: none;
+    box-shadow: 0 4px 10px rgba(1, 146, 175, 0.3);
+    font-weight: 500;
+    padding: 0.5rem 1.5rem;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    box-shadow: 0 6px 15px rgba(1, 146, 175, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Action buttons */
+.btn-outline-primary, .btn-outline-warning, .btn-outline-danger {
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    padding: 0.35rem 0.75rem;
+    margin-right: 0.2rem;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.btn-outline-primary:hover {
+    background: var(--primary-color);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(1,146,175,0.15);
+}
+
+.btn-outline-warning:hover {
+    background: var(--warning-color);
+    color: #333;
+    box-shadow: 0 2px 8px rgba(255,209,102,0.15);
+}
+
+.btn-outline-danger:hover {
+    background: var(--danger-color);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(239,71,111,0.15);
+}
+
+/* Add New Job button */
+.btn-success {
+    background: linear-gradient(90deg, var(--success-color), #43e97b);
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    padding: 0.6rem 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(6,214,160,0.12);
+    transition: background 0.2s, box-shadow 0.2s;
+}
+
+.btn-success:hover {
+    background: linear-gradient(90deg, #43e97b, var(--success-color));
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(6,214,160,0.18);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .col-form-label {
+        text-align: left;
+    }
+    
+    .form-section-title {
+        font-size: 0.95rem;
+    }
+    
+    .form-actions .btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+    
+    .form-actions .ms-2 {
+        margin-left: 0 !important;
+    }
+}
+
+@media (max-width: 992px) {
+    .card-header, .card-body {
+        padding: 1rem !important;
+    }
+    .table thead th, .table td {
+        font-size: 0.95rem;
+    }
+    .job-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .card-header, .card-body {
+        padding: 0.5rem !important;
+    }
+    .btn-success {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    .summary-info {
+        font-size: 0.95rem;
+    }
+}
